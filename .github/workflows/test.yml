@@ -2,7 +2,7 @@ name: unit-tests
 run-name: Run unit tests after push by @${{ github.actor }}
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   unit-test:
     runs-on: ${{ matrix.os }}
