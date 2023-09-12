@@ -29,5 +29,5 @@ jobs:
         run: |
           sudo chmod +x ./test.sh
           sudo xvfb-run --auto-servernum pip list
-          xvfb-run --auto-servernum pip list
-          xvfb-run --auto-servernum ./test.sh
+          sudo -E xvfb-run --auto-servernum pip list
+          sudo -E xvfb-run --auto-servernum ./test.sh
