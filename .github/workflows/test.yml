@@ -28,4 +28,4 @@ jobs:
 
         run: |
           sudo chmod +x ./test.sh
-          sudo xvfb-run ./test.sh
+          sudo xvfb-run -a ./test.sh
