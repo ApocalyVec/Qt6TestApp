@@ -27,4 +27,5 @@ jobs:
       - name: Test with pytest
         run: |
           sudo chmod +x ./test.sh
-          sudo -E xvfb-run --auto-servernum ./test.sh
+#          sudo -E xvfb-run --auto-servernum ./test.sh
+          sudo ./test.sh
