@@ -1,1 +1,1 @@
-pytest DummyTest.py
+pytest testQT.py
