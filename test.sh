@@ -1,2 +1,2 @@
 #!/bin/bash
-python -m pytest DummyTest.py -s
+python3 -m pytest DummyTest.py -s
