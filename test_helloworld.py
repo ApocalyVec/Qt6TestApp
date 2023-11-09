@@ -13,7 +13,7 @@ def app(qtbot):
     return test_hello_app
 
 
-def test_label(app):
+def test_label(app,qtbot):
     assert app.text_label.text() == "Hello World!"
 
 
