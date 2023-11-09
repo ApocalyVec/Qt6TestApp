@@ -1,2 +1,2 @@
 #!/bin/bash
-pytest Helloworldtest.py
+pytest test_Helloworld.py
