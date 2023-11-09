@@ -13,18 +13,38 @@ jobs:
     env:
       DISPLAY: ':99.0'
     steps:
-      - uses: actions/checkout@v3
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: Install Qt
+        uses: tlambert03/setup-qt-libs@v1
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Start Xvfb
+        run: |
+          sudo apt-get install -y xvfb libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 libxcb-xinput0 libxcb-xfixes0
       - name: Install dependencies
         run: |
-          sudo apt install libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 libxcb-xfixes0 x11-utils libegl1 xvfb qt6-base-dev
-          /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 1920x1200x24 -ac +extension GLX
-          pip install --upgrade pip
-          sudo pip install -r requirements.txt
+          python -m pip install --upgrade pip
+          sudo apt install -y xvfb x11-utils libxkbcommon-x11-0
+          sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+          pip install wheel
+          pip install -r requirements.dev.txt
+          pip uninstall opencv-python -y
+          pip install opencv-python-headless
+          pip install pyside2 pytest coverage pytest-qt
+          python -m pip install coverage pytest
+          pip install PyQt6
+          pip install pytest-xvfb
+
+      - name: Check job values
+        run: |
+          QT_SELECT=qt6
+
       - name: Test with pytest
         run: |
-          sudo chmod +x ./test.sh
-          sudo -E xvfb-run --auto-servernum ./test.sh
+          xvfb-run --auto-servernum --server-num=1 --server-args="-screen 1 1920x1200x24 -ac +extension GLX" ./tests/test.sh
+
+
+      
