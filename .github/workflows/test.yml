@@ -33,6 +33,7 @@ jobs:
           pip install -r requirements.txt
           sudo pip install PyQt6
           sudo pip install pytest
+          sudo pip install pytest-qt
           
           
 
@@ -42,7 +43,7 @@ jobs:
 
       - name: Test with pytest
         run: |
-          sudo pytest test_helloworld.py -s
+          sudo pytest test_helloworld.py -s --fixtures ./
 
 
       
