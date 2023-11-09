@@ -13,8 +13,10 @@ def app(qtbot):
     return test_hello_app
 
 
-def test_label(app,qtbot):
+def test_label(app):
+    print("helloworld")
     assert app.text_label.text() == "Hello World!"
+
 
 
 # def test_label_after_click(app, qtbot):
