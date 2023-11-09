@@ -33,7 +33,7 @@ jobs:
           pip install -r requirements.txt
           pip install PyQt6
           pip install pytest
-          pip install pytest-xvfb
+          
           
 
       - name: Check job values
@@ -42,7 +42,7 @@ jobs:
 
       - name: Test with pytest
         run: |
-          sudo sh ./test.sh
+          pytest
 
 
       
