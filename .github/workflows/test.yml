@@ -42,11 +42,12 @@ jobs:
           QT_SELECT=qt6
 
       - name: Test with pytest
-        env: |
-          QT_DEBUG_PLUGINS = 1
-          QT_QPA_PLATFORM = offscreen
         run: |
-          sudo pytest test_helloworld.py -s 
+
+      - name: Test with pytest
+        run: |
+         sudo xvfb-run --auto-servernum --server-num=1 --server-args="-screen 1 1920x1200x24 -ac +extension GLX" pytest test_helloworld.py -s 
+           
 
 
       
