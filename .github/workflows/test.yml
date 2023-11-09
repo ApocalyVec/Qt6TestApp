@@ -31,7 +31,6 @@ jobs:
           sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
           pip install wheel
           pip install -r requirements.txt
-          python -m pip install coverage pytest
           pip install PyQt6
           pip install pytest
           pip install pytest-xvfb
