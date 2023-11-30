@@ -1,3 +1,5 @@
+print("importing packages.")
+
 import pytest
 
 from PyQt6 import QtCore
