@@ -34,15 +34,13 @@ jobs:
           sudo pip install PyQt6
           sudo pip install pytest
           sudo pip install pytest-qt
-          
-          
 
-      - name: Check job values
-        run: |
-          QT_SELECT=qt6
+      # - name: Check job values
+      #   run: |
+      #     QT_SELECT=qt6
 
-      - name: Test with pytest
-        run: |
+      # - name: Test with pytest
+      #   run: |
 
       - name: Test with pytest
         run: |
