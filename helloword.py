@@ -12,7 +12,7 @@ class MyApp(QWidget):
 
         self.text_label = QLabel()
         self.text_label.setText("Hello World!")
-        self.text_label.setFont(QFont('Arial', 20))/' /p'
+        self.text_label.setFont(QFont('Arial', 20))
 
         self.button = QPushButton("Fancy Button")
         self.button.setFont(QFont('Arial', 14))
