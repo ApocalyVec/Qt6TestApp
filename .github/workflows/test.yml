@@ -34,6 +34,7 @@ jobs:
           sudo apt install python3-qtpy
           sudo pip install PyQt6 --upgrade
           sudo pip install pytest
+          sudo pip install pyqtgraph
           sudo pip install pytest-qt
 
       # - name: Check job values
