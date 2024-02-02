@@ -19,6 +19,6 @@ def test_label(app):
 
 
 
-# def test_label_after_click(app, qtbot):
-#     qtbot.mouseClick(app.button, QtCore.Qt.LeftButton)
-#     assert app.text_label.text() == "Changed!"
+def test_label_after_click(app, qtbot):
+    qtbot.mouseClick(app.button, QtCore.Qt.LeftButton)
+    assert app.text_label.text() == "Changed!"
