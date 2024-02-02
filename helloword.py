@@ -2,6 +2,7 @@ import sys
 
 from PyQt6.QtGui import QFont
 from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout
+import pyqtgraph
 
 
 class MyApp(QWidget):
@@ -11,7 +12,7 @@ class MyApp(QWidget):
 
         self.text_label = QLabel()
         self.text_label.setText("Hello World!")
-        self.text_label.setFont(QFont('Arial', 20))
+        self.text_label.setFont(QFont('Arial', 20))/' /p'
 
         self.button = QPushButton("Fancy Button")
         self.button.setFont(QFont('Arial', 14))
